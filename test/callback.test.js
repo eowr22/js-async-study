@@ -16,9 +16,9 @@ describe("Callback - fs.readFile를 콜백 패턴만 사용", () => {
         const second = JSON.parse(secondData);
 
         const secondKey = first["second_key"];
-        const resultObj = second.find((data) => data.key === secondKey);
-        const result = resultObj["hi"];
-        expect(result).toBe("Second 방가방가");
+        const secondObj = second.find((data) => data.key === secondKey);
+
+        expect(secondObj["hi"]).toBe("Second 방가방가");
         done();
       });
     });
@@ -39,8 +39,8 @@ describe("Callback - fs.readFile를 콜백 패턴만 사용", () => {
             const secondObj = second.find((data) => data.key === secondKey);
             const thirdKey = secondObj["third_key"];
             const thirdObj = third.find((data) => data.key === thirdKey);
-            const result = thirdObj['hi'];
-            expect(result).toBe("Third 방가방가");
+
+            expect(thirdObj['hi']).toBe("Third 방가방가");
             done();
           });
         });
